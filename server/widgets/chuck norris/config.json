@@ -1,0 +1,8 @@
+{
+  "name": "Chuck Norris",
+  "id": "chucknorris",
+  "version": "1.0.0",
+  "description": "Display a random Chuck Norris joke",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/chucknorris",
+  "image" : "icon.png"
+}

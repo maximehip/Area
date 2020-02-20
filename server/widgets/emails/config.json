@@ -1,0 +1,8 @@
+{
+  "name": "Email",
+  "version": "1.0.0",
+  "id" : "emails",
+  "description": "Send Email",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/email",
+  "image" : "icon.png"
+}

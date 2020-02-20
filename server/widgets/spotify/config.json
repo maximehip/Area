@@ -1,0 +1,8 @@
+{
+  "name": "Spotify",
+  "version": "1.0.0",
+  "id" : "spotify",
+  "description": "Spotify API",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/weather",
+  "image" : "icon.png"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Discord",
+  "id": "discord",
+  "version": "1.0.0",
+  "description": "Send DM to user",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/chucknorris",
+  "image" : "icon.png"
+}

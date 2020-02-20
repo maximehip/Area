@@ -1,0 +1,8 @@
+{
+  "name": "Upcoming movie",
+  "version": "1.0.0",
+  "id" : "UpcomingMovie",
+  "description": "Get upcoming movie",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/movie/upcoming",
+  "image" : "icon.png"
+}

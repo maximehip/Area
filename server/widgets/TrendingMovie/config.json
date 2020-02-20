@@ -1,0 +1,8 @@
+{
+  "name": "Trending movie",
+  "version": "1.0.0",
+  "id" : "TrendingMovie",
+  "description": "Get trending movie",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/movie/trending",
+  "image" : "icon.png"
+}

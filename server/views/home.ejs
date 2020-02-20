@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area | Welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="https://kit.fontawesome.com/332eb8b43e.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>
+  .card.card-body {
+    background-color: #E95420;
+  }
+  .btn.btn-primary.btn-block {
+    color: #E95420;
+    background-color: #FFFFFF;
+    border-color: #C0C0C0;
+  }
+  .lead.mt-4 {
+    color: #FFFFFF;
+  }
+  .reg {
+    color: #FFFFFF;
+  }
+  .fab.fa-facebook.fa-4x {
+    color: #FFFFFF;
+  }
+  .fab.fa-google.fa-4x {
+    color: #FFFFFF;
+  }
+  .form-group {
+    color: #FFFFFF;
+  }
+  .fas.fa-sign-in-alt {
+    color: #FFFFFF;
+  }
+  .text-center.mb-3 {
+    color: #FFFFFF;
+  }
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>	
+      <% if (success != '') { %>
+        <div class="alert alert-success" role="alert">
+          <%= success %>
+        </div>
+      <% } %>
+      <% if (error != '') { %>
+        <div class="alert alert-danger" role="alert">
+          <%= error %>
+        </div>
+      <% } %>
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <br>
+      <span style="color: Dodgerblue;">
+        <center>
+        <a href="/auth/facebook"><i class="fab fa-facebook fa-4x" ></i></a>
+        <a href="/api/auth/google"><i class="fab fa-google fa-4x"></i></a>
+      </span>
+      <p class="lead mt-4">
+        No Account? <a href="/register" class="reg">Register</a>
+      </p>
+    </div>
+  </div>
+</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</body>
+</html>

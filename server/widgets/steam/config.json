@@ -1,0 +1,8 @@
+{
+  "name": "Steam Player",
+  "version": "1.0.0",
+  "id" : "steam",
+  "description": "Get player count in Steam Game",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/steam",
+  "image" : "icon.png"
+}

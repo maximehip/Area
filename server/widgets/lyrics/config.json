@@ -1,0 +1,8 @@
+{
+  "name": "Lyrics",
+  "version": "1.0.0",
+  "id" : "lyrics",
+  "description": "Get lyrics of an song",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/movie/trending",
+  "image" : "icon.png"
+}

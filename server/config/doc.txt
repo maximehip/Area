@@ -1,0 +1,7 @@
+themovieDB: https://www.themoviedb.org/documentation/api
+twitch: https://dev.twitch.tv/docs/
+toornament: https://developer.toornament.com/v2/doc/organizer_overview
+steam: https://partner.steamgames.com/doc/api
+riot: https://developer.riotgames.com/apis
+google: https://developers.google.com/docs/api
+newsAPI: https://newsapi.org/docs

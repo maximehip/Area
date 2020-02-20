@@ -1,0 +1,39 @@
+{
+  "name": "DEV_area_2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/uws": "^10.149.0",
+    "axios": "^0.19.1",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "discord.js": "^11.5.1",
+    "ejs": "^3.0.1",
+    "erlpack": "github:discordapp/erlpack",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.0",
+    "fb-messenger-bot-api": "^4.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.6",
+    "nodemailer": "^6.4.2",
+    "notiflix": "^2.0.0",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "spotify-web-api-node": "^4.0.0",
+    "oauth": "^0.9.15"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

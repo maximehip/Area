@@ -1,0 +1,21 @@
+{ 
+    "tokenArea": "XX",
+    "riotApiKey": "XX",
+    "toornamentApiKey": "XX",
+    "toornamentClientID": "XX",
+    "toornamentClientSecret": "X",
+    "tokenSteam": "XS",
+    "tokenWeather": "X",
+    "tokenWeatherTEMPO": "X",
+    "tokenTranslate": "S",
+    "idClientTwitch": "X",
+    "ClientScretTwitch": "X",
+    "tokenTwitch": "X",
+    "newApiToken": "X",
+    "theMovieDbTokenV3": "XX",
+    "theMovieDbTokenV4": "X.5",
+    "twitterSecretKey": "X",
+    "twitterApiKey": "XZ",
+    "MusicXMatchApiKey": "X",
+    "debug": false
+}
