@@ -1,0 +1,7 @@
+{
+  "name": "Temperature increase",
+  "version": "1.0.0",
+  "id" : "ti",
+  "description": "Check if temperature increase",
+  "image" : "icon.png"
+}

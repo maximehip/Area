@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,14 +24,18 @@
     "fb-messenger-bot-api": "^4.3.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.6",
+    "node-cron": "^2.0.3",
     "nodemailer": "^6.4.2",
     "notiflix": "^2.0.0",
+    "oauth": "^0.9.15",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "simple-youtube-api": "^5.2.1",
     "spotify-web-api-node": "^4.0.0",
-    "oauth": "^0.9.15"
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

@@ -10,6 +10,7 @@ module.exports = {
 			appId = appId.appid;
 			await axios.get('https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=' + appId)
 		.then(function (response) {
+			console.log(response.data.response.player_count);
 			resolve(response.data.response.player_count);
 		})
 		.catch(function (error) {

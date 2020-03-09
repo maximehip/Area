@@ -1,0 +1,4 @@
+{
+  "id": "getTemperature",
+  "action": "Get current temperature in a city"
+}

@@ -4,6 +4,8 @@ var bcrypt = require('bcryptjs');
 var facebook = require('passport-facebook').Strategy;
 var User = require('../models/User.js');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
+var jwt = require('jsonwebtoken');
 
 module.exports = function (passport) {
 	passport.use(
@@ -45,6 +47,8 @@ module.exports = function (passport) {
 						newUser.token = accessToken;
 						newUser.connected_w = "facebook";
 						newUser.id = profile.id;
+						newUser.triggerAdd.push("no");
+						newUser.senderAdd.push("no");
 
 	    				newUser.save(function(err){
 	    					if(err)
@@ -72,6 +76,8 @@ module.exports = function (passport) {
 	    				newUser.token = accessToken;
 	    				newUser.name = profile.name.givenName + ' ' + profile.name.familyName;
 	    				newUser.email = profile.email;
+	    				newUser.triggerAdd.push("no");
+						newUser.senderAdd.push("no");
 
 	    				newUser.save(function(err){
 	    					if(err)
@@ -82,6 +88,42 @@ module.exports = function (passport) {
 	    		});
 		return done(createdError, createdUser)
 	}));
+	passport.use(new TwitterStrategy({
+	    consumerKey: "PSwKoBTySx8ltcFQN8GT80TvI",
+	    consumerSecret: "OW1aFARbLqjT6bfSAHgNM5fTZ5G0XRnTUCY9vEAsPZcF0OdO5z",
+	    callbackURL: "https://area-oui.herokuapp.com/auth/twitter/callback"
+	  },
+	  function(token, tokenSecret, profile, done) {
+	    User.findOne({email: profile.email}, function(err, user){
+	    			if(err)
+	    				return done(err);
+	    			if(user) {
+	    				user.token = token;
+	    				user.tokenSecret;
+	    				user.save(function(err) {
+	    					if (err)
+	    						throw err;
+	    					return done(null, user);
+	    				})
+	    			}
+	    			else {
+	    				var newUser = new User();
+	    				newUser.id = profile.id;
+	    				newUser.token = token;
+	    				newUser.secretToken = tokenSecret;
+	    				newUser.name = profile.username;
+	    				newUser.email = profile.email;
+	    				newUser.triggerAdd.push("no");
+						newUser.senderAdd.push("no");
+	    				newUser.save(function(err){
+	    					if(err)
+	    						throw err;
+	    					return done(null, newUser);
+	    				})
+	    			}
+	    		});
+	  }
+	));
 	passport.serializeUser((user, done) => {
 		done(null, user.id);
 	});

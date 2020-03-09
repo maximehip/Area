@@ -8,7 +8,6 @@ import 'package:area_mobile/MeRoute.dart';
 import 'package:area_mobile/register.dart' as reg;
 import 'package:area_mobile/webView.dart' as webView;
 
-import 'login.dart';
 
 void main() => runApp(MyApp());
 
@@ -157,7 +156,7 @@ class LoginService {
   var errorMessage;
   var token;
 
-  Future<Login> createContact(String email, String password) async {
+  Future<String> createContact(String email, String password) async {
     try {
       final response =
           await client.post(_serviceUrl, headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: {"email" :  email.toString().trim(), "password" : password.toString()}).then((response) {

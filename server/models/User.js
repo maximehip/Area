@@ -24,11 +24,27 @@ const UserSchema = new mongoose.Schema({
 	token: {
 		type: String,
 	},
+	secretToken : {
+		type: String,
+	},
 	actions : {
 		type : Array,
 	},
 	connected_w : String,
 	infos :  {
+		type : Array,
+	},
+	triggerAdd: {
+		type : Array,
+		
+	},
+	trigger : {
+		type : Array,
+	},
+	senderAdd: {
+		type : Array,
+	},
+	sender: {
 		type : Array,
 	}
 });

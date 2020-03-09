@@ -1,0 +1,8 @@
+{
+  "name": "Steam player change",
+  "version": "1.0.0",
+  "id" : "stc",
+  "description": "Check if number of player change",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/weather",
+  "image" : "icon.png"
+}

@@ -7,30 +7,12 @@
 	<script src="https://kit.fontawesome.com/332eb8b43e.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap">
+    <link rel="stylesheet" type="text/css" href="css/style_widgets.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="notiflix-2.0.0.min.css" />
   <script src="notiflix-2.0.0.min.js"></script>
-  <style>
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
-  </style>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -54,6 +36,12 @@
           <a class="nav-link" href="/widgets">Widget</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/trigger">Trigger</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/sender">Sender</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
@@ -70,12 +58,14 @@
     <table class="table">
   <thead>
     <tr>
+      <th scope="col">Trigger</th>
       <th scope="col">Contents</th>
-      <th scope="col">Output</th>
+      <th scope="col">Sender</th>
       <th scope="col">Send</th>
       <th scope="col">Save</th>
       <th scope="col">Delete</th>
       <th scope="col">Settings</th>
+      <th scope="col"></th>
         <th scope="col"><a href="/addAction"><button type="button" class="btn btn-success" type="submit">ADD <i class="far fa-plus-square"></i></button></th></a>
     </tr>
   </thead>
@@ -85,7 +75,19 @@
     var widgets = action.split('0'); %>
     <form action="/save" method="POST">
       <input style="opacity: 0;" name="id" value="<%= id %>">
+      <div class="content">
       <tr>
+        <td>
+          <select id="trigger" class="form-control" name="trigger">
+            <% for (var trigger of user.triggerAdd) { %> 
+              <% if (trigger == trigger[0]) { %>
+                <option selected="selected" value="<%= trigger %>"><%= trigger %></option>
+              <% } else { %>
+                <option value="<%= trigger %>"><%= trigger %></option>
+              <% } %>
+            <% } %>
+          </select>
+        </td>
         <td>
           <select id="widget1" class="form-control" name="widgets">
             <% for (var widget of user.widgets) { %> 
@@ -99,11 +101,11 @@
         </td>
         <td>
           <select class="form-control" name="widgets" id="reaction1">
-            <% for (var widget of user.widgets) { %> 
-              <% if (widget == widgets[1]) { %>
-                <option id="2" selected="selected" value="<%= widget %>"><%= widget %></option>
+            <% for (var sender of user.senderAdd) { %> 
+              <% if (sender == widgets[1]) { %>
+                <option id="2" selected="selected" value="<%= sender %>"><%= sender %></option>
               <% } else { %>
-                <option id="2" value="<%= widget %>"><%= widget %></option>
+                <option id="2" value="<%= sender %>"><%= sender %></option>
               <% } %>
             <% } %>
           </select>
@@ -120,6 +122,17 @@
          <td><span style="font-size: 20px; color: Orange;"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#<%= action %>">
           <i class="fas fa-cog"></i></span>
         </button></td>
+      </div>
+        <td>
+           <details>
+            <% if (id == index) { %>
+              <summary>Output</summary>
+              <p><%= output %></p>
+            <% } else { %>
+              <summary></summary>
+            <% } %>
+          </details>
+        </td>
       </tr>
     </form>
     <div class="modal fade" id="<%= action %>" role="dialog">
@@ -136,49 +149,74 @@
           for (var widget of widgets) { %>
           <% if (widget == "emails") { %>
             <div class="form-group">
-              <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputEmail1">Sender's email address</label>
-              <input type="email" class="form-control" id="sender_email" name="sender_email" aria-describedby="emailHelp" placeholder="Enter email" value="<%= user.infos[0].sender_email %>">
+              <input style="opacity: 0;" name="id" value="<%= id %>">
+              <input type="email" class="form-control" id="sender_email" name="sender_email" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
-              <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputPassword1">Application Password</label>
+              <input style="opacity: 0;" name="id" value="<%= id %>">
               <input type="password" class="form-control" id="appPassword" id="appPassword" placeholder="Application Password">
               <small id="emailHelp" class="form-text text-muted">Generate an application password throught your email dashboard.</small>
             </div>
              <div class="form-group">
-              <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputEmail1">Recipient's email address</label>
+              <input style="opacity: 0;" name="id" value="<%= id %>">
               <input type="email" class="form-control" id="to_email" name="to_email" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
           <% } else if (widget == "discord") { %>
           <div class="form-group">
-            <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputEmail1">Discord recipent's name</label>
+            <input style="opacity: 0;" name="id" value="<%= id %>">
               <input type="text" class="form-control" id="to_discord" name="to_discord" placeholder="Discord name">
+              <label for="exampleInputEmail1"><a href="https://discordapp.com/oauth2/authorize?client_id=672063561626943489&scope=bot&permissions=8" target="_blank">Click here to add the Discord bot to your server</a></label>
             </div>
            <% } else if (widget == "steam") { %>
            <div class="form-group">
-            <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputEmail1">Steam game name</label>
+            <input style="opacity: 0;" name="id" value="<%= id %>">
               <input type="text" class="form-control" id="steam_game" name="steam_game" placeholder="Steam game">
             </div>
            <% } else if (widget == "weather") { %>
             <div class="form-group">
-              <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputEmail1">City</label>
+              <input style="opacity: 0;" name="id" value="<%= id %>">
               <input type="text" class="form-control" id="city" name="city" placeholder="City">
             </div>
            <% } else if (widget == "lyrics") { %>
             <div class="form-group">
-              <input style="opacity: 0;" name="id" value="<%= id %>">
               <label for="exampleInputEmail1">Song</label>
+              <input style="opacity: 0;" name="id" value="<%= id %>">
               <input type="text" class="form-control" id="song" name="song" placeholder="Song">
               <label for="exampleInputEmail1">Artist</label>
               <input type="text" class="form-control" id="artist" name="artist" placeholder="Artist">
             </div>
+           <% } else if (widget == "spotify") { %>
+           <div class="form-group">
+              <a href="/connect/spotify">Connect Spotify</a>
+              <input style="opacity: 0;" name="id" value="<%= id %>">
+            </div>
+           <% } else if (widget == "youtube") { %>
+           <div class="form-group">
+              <input type="text" class="form-control" id="channelURL" name="channelURL" placeholder="Youtube Channel URL">
+              <input style="opacity: 0;" name="id" value="<%= id %>">
+            </div>
            <% } %> 
           <% }%>
+          <% for (var trigger of user.triggerAdd) { %>
+            <% if (trigger == "sc") { %>
+             <div class="form-group">
+                <a href="/connect/spotify">Connect Spotify</a>
+                <input style="opacity: 0;" name="id" value="<%= id %>">
+              </div>
+            <% } else if (trigger == "stc" || trigger == "std" || trigger == "sti") { %>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Steam game name</label>
+              <input style="opacity: 0;" name="id" value="<%= id %>">
+                <input type="text" class="form-control" id="steam_game" name="steam_game" placeholder="Steam game">
+              </  div>
+           <% } %>
+          <% } %>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Save</button>

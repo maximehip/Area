@@ -1,0 +1,8 @@
+{
+  "name": "Twitter",
+  "version": "1.0.0",
+  "id" : "twitter",
+  "description": "Post a tweet",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/movie/trending",
+  "image" : "icon.png"
+}

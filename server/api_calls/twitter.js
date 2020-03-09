@@ -1,32 +1,14 @@
-const config = require('./config.json');
-var OAuth = require('oauth');
+const config = require('../config/config.json');
+var Twitter = require('twitter');
 
-async function postTwitt(status, user_secret, access_token) {
-    var oauth = new OAuth.OAuth(
-        'https://api.twitter.com/oauth/request_token',
-        'https://api.twitter.com/oauth/access_token',
-        config.twitterApiKey,
-        config.twitterSecretKey,
-        '1.0A',
-        null,
-        'HMAC-SHA1'
-    );
-    
-    var postBody = {
-        'status': status
-    };
-    
-    console.log('Ready to Tweet article:\n\t', postBody.status);
-    oauth.post('https://api.twitter.com/1.1/statuses/update.json',
-        access_token,
-        user_secret,
-        postBody,
-        '',
-        function(err, data, res) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(data);
-            }
-        });
+async function postTweet(status, user) {
+    console.log("ici");
+    var twitterApi = new Twitter({consumer_key: 'PSwKoBTySx8ltcFQN8GT80TvI', consumer_secret: 'OW1aFARbLqjT6bfSAHgNM5fTZ5G0XRnTUCY9vEAsPZcF0OdO5z', access_token_key: user.token, access_token_secret: user.secretToken});
+    twitterApi.post('statuses/update', {status: status},  function(error, tweet, response) {
+      if(error) throw error;
+      console.log(tweet);  // Tweet body.
+      console.log(response);  // Raw response object.
+    });
 }
+
+module.exports.postTweet = postTweet;

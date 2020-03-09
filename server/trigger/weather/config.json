@@ -1,0 +1,8 @@
+{
+  "name": "Temperature change",
+  "version": "1.0.0",
+  "id" : "tc",
+  "description": "Check if temperature change",
+  "url" : "https://area-oui.herokuapp.com/api/widgets/weather",
+  "image" : "icon.png"
+}

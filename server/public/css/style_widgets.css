@@ -63,4 +63,120 @@ section {
  .list-blocks ul.card-list.short li {
    margin-right: 2%;
 }
- 
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+details {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    width: 35em;
+    max-width: calc(100% - 2rem);
+    position: relative;
+    border: 1px solid #EA5420;
+    border-radius: 6px;
+    background-color: #EA5420;
+    color: #263238;
+    transition: background-color 0.15s;
+}
+ details > :last-child {
+    margin-bottom: 1rem;
+}
+ details::before {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    opacity: 0.15;
+    box-shadow: 0 0.25em 0.5em #263238;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: -1;
+}
+ details[open] {
+    background-color: #fff;
+}
+ details[open]::before {
+    opacity: 0.6;
+}
+ summary {
+    padding: 1rem 2em 1rem 0;
+    display: block;
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+summary:focus {
+    outline: 0;
+}
+
+ summary::before, summary::after {
+    width: 0.75em;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    content: '';
+    background-color: currentColor;
+    text-align: right;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+}
+ summary::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+ [open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+ summary::-webkit-details-marker {
+    display: none;
+}
+ p {
+    margin: 0 0 1em;
+    line-height: 1.5;
+}
+ ul {
+    margin: 0 0 1em;
+    padding: 0 0 0 1em;
+}
+ li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+ code {
+    padding: 0.2em;
+    border-radius: 3px;
+    background-color: #e0e0e0;
+}
+ pre > code {
+    display: block;
+    padding: 1em;
+    margin: 0;
+}
+
+content {
+  margin: 1rem auto;
+}
+

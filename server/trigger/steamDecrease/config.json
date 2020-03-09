@@ -1,0 +1,7 @@
+{
+  "name": "Steam player decrease",
+  "version": "1.0.0",
+  "id" : "td",
+  "description": "Check if number of player decrease",
+  "image" : "icon.png"
+}

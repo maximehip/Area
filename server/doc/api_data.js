@@ -42,7 +42,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "User"
   },
   {
@@ -81,7 +81,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "User"
   },
   {
@@ -113,7 +113,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "User"
   },
   {
@@ -132,7 +132,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "User"
   },
   {
@@ -191,7 +191,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widget"
   },
   {
@@ -243,7 +243,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widget"
   },
   {
@@ -262,7 +262,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widget"
   },
   {
@@ -281,7 +281,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widget"
   },
   {
@@ -313,7 +313,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -358,7 +358,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -390,7 +390,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -422,7 +422,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -467,7 +467,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -519,7 +519,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -571,7 +571,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -603,7 +603,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -635,7 +635,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -687,12 +687,12 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
     "type": "get",
-    "url": "/api/widgets/add",
+    "url": "/api/widgets/remove",
     "title": "Remove action in user account",
     "name": "Remove_Widget",
     "group": "Widgets",
@@ -739,7 +739,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -784,7 +784,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -829,7 +829,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   },
   {
@@ -861,7 +861,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./server.js",
+    "filename": "./api/api.js",
     "groupTitle": "Widgets"
   }
 ] });
