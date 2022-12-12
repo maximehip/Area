@@ -18,7 +18,7 @@
     "discord.js": "^11.5.1",
     "ejs": "^3.0.1",
     "erlpack": "github:discordapp/erlpack",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.0",
     "fb-messenger-bot-api": "^4.3.1",
